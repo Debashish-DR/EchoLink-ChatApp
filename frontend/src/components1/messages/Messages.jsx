@@ -4,9 +4,11 @@ import useGetMessages from "../../hooks/useGetMessages";
 import MessageSkeleton from "../skeletons/MessageSkeleton";
 import { useRef } from "react";
 import { set } from "mongoose";
+import useListenMessages from "../../hooks/useListenMessages";
 
 const Messages = () => {
   const { messages, loading } = useGetMessages();
+  useListenMessages();
   const lastMessageRef = useRef();
 
   useEffect(() => {
